@@ -17,7 +17,6 @@ void ATankAIController::BeginPlay()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("AIController found player: %s"), *PlayerTank->GetName());
 	}
-
 }
 
 ATank* ATankAIController::GetControlledTank() const
