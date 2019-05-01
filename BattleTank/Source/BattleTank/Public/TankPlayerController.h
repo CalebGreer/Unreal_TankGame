@@ -17,6 +17,10 @@ public:
 	void BeginPlay() override;
 	void Tick(float DeltaTime) override;
 
+protected:
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+	ATank* GetControlledTank() const;
+
 private:
 	UPROPERTY(EditDefaultsOnly)
 	float CrosshairXLocation = 0.5f;
@@ -24,8 +28,6 @@ private:
 	float CrosshairYLocation = 0.33333f;
 	UPROPERTY(EditDefaultsOnly)
 	float LineTraceRange = 1000000;
-
-	ATank* GetControlledTank() const;
 
 	// Start the tank moving the barrel so that s hot would hit where
 	// the crosshair intersects the world
