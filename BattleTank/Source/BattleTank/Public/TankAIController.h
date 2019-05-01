@@ -17,4 +17,8 @@ public:
 	void BeginPlay() override;
 	void Tick(float DeltaTime) override;
 
+private:
+	// How close can the AI Tank get
+	float AcceptanceRadius = 3000;
+
 };
