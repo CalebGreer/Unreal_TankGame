@@ -7,6 +7,7 @@
 #include "TankAIController.generated.h"
 
 class ATank;
+class UTankAimingComponent;
 
 UCLASS()
 class BATTLETANK_API ATankAIController : public AAIController
@@ -20,5 +21,4 @@ public:
 private:
 	// How close can the AI Tank get
 	float AcceptanceRadius = 3000;
-
 };

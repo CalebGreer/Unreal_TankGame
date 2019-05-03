@@ -8,10 +8,7 @@
 
 // Forward Declarations
 class UTankBarrel;
-class UTankTurret;
 class AProjectile;
-class UTankAimingComponent;
-class UTankMovementComponent;
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn
@@ -26,23 +23,12 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(BlueprintReadOnly, Category = "Firing")
-	UTankAimingComponent* TankAimingComponent = nullptr;
-
-	UPROPERTY(BlueprintReadOnly, Category = "Movement")
-	UTankMovementComponent* TankMovementComponent = nullptr;
-
 public:	
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-	void AimAt(FVector HitLocation);
-
-
 	UFUNCTION(BlueprintCallable, Category = "Firing")
 	void Fire();
 
 private:
+	// TODO Remove once Firing is moved to Aiming Component
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float LaunchSpeed = 4000;
 
